@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F6F0FF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="#F6F0FF">
+
+        <!-- Hi John -->
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Hi User"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Trade Win Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTradeWin"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#EADCF8"
+            app:layout_constraintTop_toBottomOf="@id/tvGreeting"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Trade win %"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tradewun"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="54.19%"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <!-- Placeholder for Circular Chart -->
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:rotation="10"
+                    android:src="@drawable/pielayer" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Profit Factor Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardProfitFactor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#EADCF8"
+            app:layout_constraintTop_toBottomOf="@id/cardTradeWin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Profit factor"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvpf"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:text="1.11"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <!-- Placeholder for Circular Chart -->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:rotation="90"
+                    android:visibility="gone"
+                    android:src="@drawable/pielayer" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Net P&L Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardNetPL"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            app:cardCornerRadius="12dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#EADCF8"
+            app:layout_constraintTop_toBottomOf="@id/cardProfitFactor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Net PL"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/npl"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="$9,375.38"
+                    android:textColor="#008000"
+                    android:textStyle="bold"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Avg Win/Loss Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAvgWinLoss"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#EADCF8"
+            app:layout_constraintTop_toBottomOf="@id/cardNetPL"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Avg win/loss trade"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/prfoitlost"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="0.94"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <!-- Placeholder bar image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/pielayer" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            app:indicatorColor="@color/primary"
+            android:layout_height="wrap_content"/>
+
+
+        <com.trade.tradewise.LineChartView
+            android:id="@+id/customChart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardAvgWinLoss"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

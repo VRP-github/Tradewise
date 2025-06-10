@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgorund"
+    tools:context=".activity.LoginActivity">
+    <ScrollView
+        android:id="@+id/scroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fillViewport="true"
+        android:isScrollContainer="true"
+
+
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingBottom="40dp"
+
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/app_icon__1_"
+                android:layout_marginTop="@dimen/_42sdp"
+                />
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:indicatorColor="@color/primary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
+                android:indeterminate="true"/>
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textStyle="bold"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:text="Login!"
+                android:textColor="@color/black"
+
+                app:layout_constraintTop_toBottomOf="@id/ivLogo"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                app:hintTextColor="#D3D3D3"
+                android:layout_marginTop="@dimen/_18sdp"
+
+                app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/etEmail"
+                    android:textColor="#D3D3D3"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                app:hintTextColor="#D3D3D3"
+                app:endIconMode="password_toggle"
+                app:endIconTint="#80000000"
+                android:layout_marginTop="@dimen/_13sdp"
+
+                app:layout_constraintTop_toBottomOf="@id/layoutEmail">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/etPassword"
+                    android:textColor="#D3D3D3"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                app:buttonTint="#D4C5C5"
+                android:text="Remember password"
+                android:padding="0dp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:paddingStart="@dimen/_5sdp"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/primary"
+
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_13sdp"
+                app:layout_constraintTop_toBottomOf="@id/layoutPassword"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/forgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/checkbox"
+                app:layout_constraintBottom_toBottomOf="@id/checkbox"
+                android:text="Forgot password?"
+
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_10ssp"
+
+                />
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progrss"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:indeterminate="true"
+                app:trackColor="@color/primary"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:id="@+id/btnLogin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkbox"
+                android:background="@color/primary"
+                app:cornerRadius="10dp"
+                android:text="Log In"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                android:layout_marginTop="@dimen/_26sdp"
+                android:layout_height="wrap_content"/>
+
+
+
+
+            <TextView
+                android:id="@+id/tvSignintitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:text="Don't have an account"
+                android:textColor="#999999"
+                android:textSize="@dimen/_10ssp"
+              android:layout_marginTop="@dimen/_10sdp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvSignUp"
+                app:layout_constraintTop_toBottomOf="@id/btnLogin"
+                />
+            <TextView
+                android:id="@+id/tvSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:layout_marginStart="@dimen/_3sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_10ssp"
+
+                app:layout_constraintTop_toTopOf="@id/tvSignintitle"
+                app:layout_constraintStart_toEndOf="@id/tvSignintitle"
+                app:layout_constraintBottom_toBottomOf="@id/tvSignintitle"
+                />
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="@dimen/_250sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSignUp"/>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

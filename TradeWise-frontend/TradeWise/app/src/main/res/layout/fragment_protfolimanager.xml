@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".frgement.ProtfolimanagerFragment">
+
+    <!-- ScrollView for vertical scrolling -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/white">
+
+            <!-- Title -->
+
+            <!-- HorizontalScrollView wraps both header and recyclerView for sync scroll -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portfolio Organizer"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Table Header -->
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/table_view_po"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:layout_width="150dp"
+                                android:padding="8dp"
+                                android:text="Account Name"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:padding="8dp"
+                                android:text="Type"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:padding="8dp"
+                                android:text="Balance"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:padding="8dp"
+                                android:text="PCM"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:textColor="@android:color/black"/>
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:padding="8dp"
+                                android:text="Action"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:textColor="@android:color/black"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <!-- RecyclerView matching header width -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/item_portfolio"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Progress Indicator overlay -->
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminate="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:indicatorColor="@color/primary" />
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/baseline_add_24"
+        android:backgroundTint="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

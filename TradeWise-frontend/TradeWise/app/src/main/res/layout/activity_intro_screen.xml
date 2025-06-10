@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:paddingStart="16dp"
+    app:layout_constraintVertical_chainStyle="packed"
+    android:paddingEnd="16dp"
+    android:background="@color/backgorund"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.IntroScreen">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="match_parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp" >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:src="@drawable/sscx"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/tvTitl2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Plan Your Trades\nwith TradeWise"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvTitl2"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text="EveryThing you need for\nconsitsten Profit"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/btnSignin"
+        android:textColor="@color/black"
+
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignin"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cornerRadius="10dp"
+        android:text="Sign In"
+        app:layout_constraintBottom_toTopOf="@id/btnSignup"
+        app:layout_constraintTop_toBottomOf="@id/tvTitl2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignup"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cornerRadius="10dp"
+        android:text="Sign Up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSignin"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
